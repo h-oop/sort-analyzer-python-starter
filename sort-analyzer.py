@@ -17,6 +17,26 @@ def loadDataArray(fileName):
     return temp
 
 
+# LOAD DATA FILE INTO GLOBAL VARIABLES
+randomData = loadDataArray("data-files/random-values.txt")
+reversedData = loadDataArray("data-files/reversed-values.txt")
+nearlySortedData = loadDataArray("data-files/nearly-sorted-values.txt")
+fewUniqueData = loadDataArray("data-files/few-unique-values.txt")
+
+# VERIFY LOADED DATA BY PRINTING FIRST 50 ELEMENTS
+print(randomData[0:50])
+print(reversedData[0:50])
+print(nearlySortedData[0:50])
+print(fewUniqueData[0:50])
+
+
+# EXAMPLE OF HOW TO TIME DURATION OF A SORT ALGORITHM
+# startTime = time.time()
+# bubbleSort(randomData)
+# endTime = time.time()
+# print(f"Bubble Sort Random Data: {endTime - startTime} seconds")
+
+
 def bubble_sort(array):
     start = time.time()
     for i in range(len(array)):
@@ -29,7 +49,7 @@ def bubble_sort(array):
     
     end = time.time()
     timeel = end - start
-    print(timeel)
+    print(f"Bubble sort time: {timeel}s")
 
 
 def selection_sort(array):
@@ -48,7 +68,7 @@ def selection_sort(array):
 
     end = time.time()
     timeel = end - start
-    print(timeel)
+    print(f"Selection sort time: {timeel}s")
 
 
 def insertion_sort(array):
@@ -68,28 +88,19 @@ def insertion_sort(array):
 
     end = time.time()
     timeel = end - start
-    print(timeel)
+    print(f"Insertion sort time: {timeel}s")
 
 
+bubble_sort(randomData)
+bubble_sort(reversedData)
+bubble_sort(nearlySortedData)
+bubble_sort(fewUniqueData)
+selection_sort(randomData)
+selection_sort(reversedData)
+selection_sort(nearlySortedData)
+selection_sort(fewUniqueData)
+insertion_sort(randomData)
+insertion_sort(reversedData)
+insertion_sort(nearlySortedData)
+insertion_sort(fewUniqueData)
 
-
-
-
-# LOAD DATA FILE INTO GLOBAL VARIABLES
-randomData = loadDataArray("data-files/random-values.txt")
-reversedData = loadDataArray("data-files/reversed-values.txt")
-nearlySortedData = loadDataArray("data-files/nearly-sorted-values.txt")
-fewUniqueData = loadDataArray("data-files/few-unique-values.txt")
-
-# VERIFY LOADED DATA BY PRINTING FIRST 50 ELEMENTS
-print(randomData[0:50])
-print(reversedData[0:50])
-print(nearlySortedData[0:50])
-print(fewUniqueData[0:50])
-
-
-# EXAMPLE OF HOW TO TIME DURATION OF A SORT ALGORITHM
-# startTime = time.time()
-# bubbleSort(randomData)
-# endTime = time.time()
-# print(f"Bubble Sort Random Data: {endTime - startTime} seconds")
