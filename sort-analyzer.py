@@ -39,7 +39,7 @@ print(fewUniqueData[0:50])
 
 def bubble_sort(array):
     start = time.time()
-    for i in range(len(array)):
+    for i in range(len(array)-1):
 
         for j in range(len(array)-i-1):
 
@@ -78,13 +78,15 @@ def insertion_sort(array):
         insert_pos = i
         insert_val = array[insert_pos]
 
-        #     is the position    is the item to the left of the 
+        #     is the position     is the item to the left of the 
         #     bigger than 0?      position bigger?
         while insert_pos > 0 and array[insert_pos - 1] > insert_val:
             
-            array[insert_pos-1], array[insert_pos] = array[insert_pos], array[insert_pos-1]
+            array[insert_pos] = array[insert_pos - 1]
 
             insert_pos -=1
+
+        array[insert_pos] = insert_val
 
     end = time.time()
     timeel = end - start
@@ -103,4 +105,5 @@ insertion_sort(randomData)
 insertion_sort(reversedData)
 insertion_sort(nearlySortedData)
 insertion_sort(fewUniqueData)
+
 
